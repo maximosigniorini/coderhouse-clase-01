@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Coderhouse - React.js Clase 01
+
+Este es el repositorio para la primer clase de React.js en Coderhouse :)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
