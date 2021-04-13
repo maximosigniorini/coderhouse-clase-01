@@ -1,0 +1,33 @@
+.NavBarItems{
+    background: rgb(0,179,72);
+    background: linear-gradient(90deg, rgba(0,179,72,1) 0%, rgba(251,36,36,1) 100%); 
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 3px solid black;
+    border-width: .01rem;
+}
+
+.nav-menu{
+    display: grid;
+    grid-template-columns: repeat(5,auto);
+    grid-gap: 20px;
+    list-style: none;
+    text-align: center;
+    width: 70vw;
+    justify-content: end;
+    margin-left: 15%;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:visited{
+    color:black;
+}
+
+.logo{
+    width: 60px;
+}
