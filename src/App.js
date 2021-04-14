@@ -1,15 +1,13 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar'
+import ItemListContainer from './components/container/ItemListContainer'
 
 function App() {
   return (
     <div className="App">
       
       <NavBar/>
-
-      <header>
-        <h1 className="titulo">Pizzeria Signiorini</h1>
-      </header>
+      <ItemListContainer titulo={'Pizzeria Signiorini'}/>
     </div>
   );
 }
