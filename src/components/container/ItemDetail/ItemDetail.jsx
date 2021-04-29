@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
-import {Link} from 'react-router-dom'
-import './Item.css'
+import React, {useState} from 'react' 
 
-export default function Item(props) {
+
+export default function ItemDetail (props){
 
     const [numero, setNumero] = useState(1)
 
@@ -16,15 +15,17 @@ export default function Item(props) {
         }
     }
 
-    return (
-        <div className="item">
-            <img src={props.img}></img>
-            <h2><Link to={`/item/${props.id}`}>{props.name}</Link></h2>
-            <p>{props.descripcion}</p>
+    return(
+        <div>
+            <img src={props.img} className='itemFoto'></img>
+            <div className="info">
+            <h1 className="tituloItem">{props.titulo}</h1>
             <p>{props.precio}</p>
+            <p>{props.desc}</p>
             <span><a href="#" onClick={restar}><i class="fas fa-minus"></i></a></span>
             <span> {numero} </span>
             <span><a href="#" onClick={sumar}><i class="fas fa-plus"></i></a></span>
+            </div>
         </div>
     )
 }

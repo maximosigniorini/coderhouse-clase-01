@@ -1,0 +1,18 @@
+.tituloItem{
+}
+
+.itemContainer{
+    /* width: 40vw; */
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.itemFoto{
+    width: 500px;
+}
+
+.info{
+    float: right;
+    margin-top: 2%;
+    margin-right: 20%;
+}

@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from 'react'
-import Item from './Item'
-import './Item.css'
-import grandeMuzza from '../../assets/imgs/grande-muzza.png'
-import grandeNapo from '../../assets/imgs/grande-napo.png'
-import grandeFuga from '../../assets/imgs/grande-fuga.png'
+import {useParams} from 'react-router-dom'
+import './ItemDetail.css'
+import ItemDetail from './ItemDetail'
+import grandeMuzza from '../../../assets/imgs/grande-muzza.png'
+import grandeNapo from '../../../assets/imgs/grande-napo.png'
+import grandeFuga from '../../../assets/imgs/grande-fuga.png'
 
-export default function ItemList() {
-    const [items, setItems] = useState([])
+
+export default function ItemDetailContainer(props){
+
+    const {itemId} = useParams()
+
+    const [item, getItem] = useState([])
 
     useEffect(() => {
         const task = new Promise((resolve, reject) => {
@@ -38,22 +43,24 @@ export default function ItemList() {
             }, 2000)
         })
         task.then((res) => {
-            setItems(res)
+            for(let i = 0; i < res.length;i++){
+                if(res[i].id == itemId){
+                    res = res[i]
+                }
+            }
+            console.log(res);
+            getItem(res)
         })
     }, [])
+    
 
-    return (
-        <section className="items">
-            
-                {items.map((item) =>
-                    <Item
-                        name={item.nombre}
-                        descripcion={item.descripcion}
-                        precio={item.precio}
-                        img={item.imgUrl}
-                        id={item.id}
-                    />)}
-            
-        </section>
+    return(
+        <div className="itemContainer">
+            <ItemDetail 
+            id={itemId} 
+            titulo={item.nombre}
+            desc={item.descripcion} 
+            precio={item.precio} img={item.imgUrl}/>
+        </div>
     )
 }
