@@ -1,0 +1,19 @@
+.container{
+    display: grid;
+    place-items: center;
+    margin-top: 5%;
+}
+
+h1{
+    margin-bottom: 5%;
+}
+
+.mainLogo{
+    width: 200px;
+}
+
+.homeDesc{
+    margin-top: 5%;
+    width: 50vw;
+    font-style: italic;
+}

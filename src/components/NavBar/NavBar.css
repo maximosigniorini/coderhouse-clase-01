@@ -7,6 +7,7 @@
     align-items: center;
     border-bottom: 3px solid black;
     border-width: .01rem;
+    height: 15vh;
 }
 
 .nav-menu{
@@ -22,12 +23,34 @@
 
 a{
     text-decoration: none;
-}
-
-a:visited{
-    color:black;
+    color: black;
 }
 
 .logo{
     width: 60px;
+}
+
+.paginaActual{
+    color: rgb(255, 226, 226);
+}
+
+li:hover{
+    opacity: 0.5;
+}
+
+.subMenu{
+    display: none;
+    text-align: left;
+    border-radius: .5em;
+    padding: 5px;
+}
+
+ul li:hover .subMenu{
+    display: block;
+    position: absolute;
+    background: rgb(255, 67, 33);
+}
+
+ul li{
+    list-style-type: none;
 }

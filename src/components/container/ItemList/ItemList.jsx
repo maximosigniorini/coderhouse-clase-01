@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import {useParams} from 'react-router-dom'
-import './ItemDetail.css'
-import ItemDetail from './ItemDetail'
+import Item from './../Item'
+import '../Item.css'
 import grandeMuzza from '../../../assets/imgs/grande-muzza.png'
 import grandeNapo from '../../../assets/imgs/grande-napo.png'
 import grandeFuga from '../../../assets/imgs/grande-fuga.png'
@@ -9,12 +8,8 @@ import empaJYQ from '../../../assets/imgs/empanada-jamon-y-queso.webp'
 import empaCarne from '../../../assets/imgs/empanada-carne.webp'
 import empaPollo from '../../../assets/imgs/empanada-pollo.webp'
 
-
-export default function ItemDetailContainer(props){
-
-    const {id} = useParams()
-
-    const [item, getItem] = useState([])
+export default function ItemList(props) {
+    const [items, setItems] = useState([])
 
     useEffect(() => {
         const task = new Promise((resolve, reject) => {
@@ -73,23 +68,23 @@ export default function ItemDetailContainer(props){
             }, 2000)
         })
         task.then((res) => {
-            for(let i = 0; i < res.length;i++){
-                if(res[i].id == id){
-                    res = res[i]
-                }
-            }
-            getItem(res)
+            const newItems = res.filter(i => i.categoria === `${props.category}`)
+            props.category === undefined ? setItems(res) : setItems(newItems)
         })
-    }, [])
-    
+    }, [props.category])
 
-    return(
-        <div className="itemContainer">
-            <ItemDetail 
-            id={id} 
-            titulo={item.nombre}
-            desc={item.descripcion} 
-            precio={item.precio} img={item.imgUrl}/>
-        </div>
+    return (
+        <section className="items">
+            
+                {items.map((item) =>
+                    <Item
+                        name={item.nombre}
+                        descripcion={item.descripcion}
+                        precio={item.precio}
+                        img={item.imgUrl}
+                        id={item.id}
+                    />)}
+            
+        </section>
     )
 }
