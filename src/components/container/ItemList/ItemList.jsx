@@ -69,7 +69,7 @@ export default function ItemList(props) {
         })
         task.then((res) => {
             const newItems = res.filter(i => i.categoria === `${props.category}`)
-            props.category === undefined ? setItems(res) : setItems(newItems)
+            props.category === undefined || props.category === 'menu' ? setItems(res) : setItems(newItems)
         })
     }, [props.category])
 

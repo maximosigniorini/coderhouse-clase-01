@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom'
+import ButtonSignos from '../Buttons/ButtonSignos'
 import './Item.css'
 
 export default function Item(props) {
@@ -22,9 +23,9 @@ export default function Item(props) {
             <h2><Link to={`/item/${props.id}`}>{props.name}</Link></h2>
             <p>{props.descripcion}</p>
             <p>{props.precio}</p>
-            <span><a href="#" onClick={restar}><i class="fas fa-minus"></i></a></span>
+            <ButtonSignos clase='fas fa-minus' handlerClick={restar}/>
             <span> {numero} </span>
-            <span><a href="#" onClick={sumar}><i class="fas fa-plus"></i></a></span>
+            <ButtonSignos clase='fas fa-plus' handlerClick={sumar}/>
         </div>
     )
 }
