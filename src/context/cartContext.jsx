@@ -1,9 +1,14 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-export default function cartContext(){
+export const CantContext = React.createContext([]);
+
+export const Cant = ({children}) => {
+    
+    const [cant, setCant] = useState(1)
+    
     return(
-        <div>
-            
-        </div>
+        <CantContext.Provider value={[cant, setCant]}>
+            {children}
+        </CantContext.Provider>
     )
 }

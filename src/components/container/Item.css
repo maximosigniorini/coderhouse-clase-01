@@ -1,6 +1,8 @@
 .items{
     display: flex;
     flex-wrap: wrap;
+    place-items: center;
+    justify-content: center;
 }
 
 .item{
@@ -15,4 +17,9 @@
 
 img{
     width: 80px;
+}
+
+.btn:hover{
+    color: white !important;
+    opacity: .7;
 }

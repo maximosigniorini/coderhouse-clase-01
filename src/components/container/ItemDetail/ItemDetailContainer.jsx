@@ -89,7 +89,9 @@ export default function ItemDetailContainer(props){
             id={id} 
             titulo={item.nombre}
             desc={item.descripcion} 
-            precio={item.precio} img={item.imgUrl}/>
+            precio={item.precio} 
+            img={item.imgUrl}
+            item={item}/>
         </div>
     )
 }

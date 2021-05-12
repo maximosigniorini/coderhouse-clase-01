@@ -4,6 +4,7 @@ import NavBar from './components/NavBar/NavBar'
 import Home from './components/Home'
 import ItemListContainer from './components/container/ItemList/ItemListContainer'
 import ItemDetailContainer from './components/container/ItemDetail/ItemDetailContainer'
+import { Cant } from './context/cartContext'
 
 
 function App() {
@@ -19,7 +20,9 @@ function App() {
             <ItemListContainer titulo={'Menu'} />
           </Route>
           <Route path="/item/:id">
-            <ItemDetailContainer />
+            <Cant>
+              <ItemDetailContainer />
+            </Cant>
           </Route>
         </Switch>
       </BrowserRouter>
