@@ -4,6 +4,7 @@ import NavBar from './components/NavBar/NavBar'
 import Home from './components/Home'
 import ItemListContainer from './components/container/ItemList/ItemListContainer'
 import ItemDetailContainer from './components/container/ItemDetail/ItemDetailContainer'
+import Cart from './components/container/Cart/CartContainer'
 import { CartProvider } from './context/CartContext'
 
 
@@ -21,8 +22,10 @@ function App() {
               <ItemListContainer titulo={'Menu'} />
             </Route>
             <Route path="/item/:id">
-
               <ItemDetailContainer />
+            </Route>
+            <Route path="/cart">
+                <Cart />
             </Route>
           </Switch>
         </BrowserRouter>

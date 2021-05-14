@@ -1,0 +1,82 @@
+.itemsCart{
+  width: 750px;
+  height: 423px;
+  margin: 80px auto;
+  box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.50);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tituloCartCont{
+  height: 60px;
+  padding: 20px 30px;
+  font-weight: 400;
+  padding-top: 20px;
+  margin-right: 60px;
+  width: 150px;
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.itemCart{
+  padding: 20px 30px;
+  height: 120px;
+  display: flex;
+}
+
+.quitarBtn{
+    position: relative;
+    padding-top: 30px;
+    margin-right: 60px;
+}
+
+.delete-btn{
+  display: inline-block;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  background-color: rgba(255,0,0,0.7);
+  border-radius: 40%;
+}
+
+.delete-btn:hover{
+    background-color: rgba(255,0,0,1);
+}
+
+.image {
+    margin-right: 50px;
+  }
+
+.buttons{
+  padding-top: 30px;
+  margin-right: 40px;
+}
+
+.btn{
+    margin-bottom: 3px;
+}
+
+.btn:focus{
+    outline: 0;
+}
+
+.subtotal{
+  width: 80px;
+  padding-top: 27px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.total{
+    width: 100px;
+    padding-top: 20%;
+    margin-left: 80%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+  }
