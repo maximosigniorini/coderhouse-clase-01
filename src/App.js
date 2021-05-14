@@ -4,28 +4,29 @@ import NavBar from './components/NavBar/NavBar'
 import Home from './components/Home'
 import ItemListContainer from './components/container/ItemList/ItemListContainer'
 import ItemDetailContainer from './components/container/ItemDetail/ItemDetailContainer'
-import { Cant } from './context/cartContext'
+import { CartProvider } from './context/CartContext'
 
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <NavBar />
-        <Switch>
-          <Route exact path="/">
-            <Home titulo={'Pizzeria Signiorini'} />
-          </Route>
-          <Route path="/category/:id">
-            <ItemListContainer titulo={'Menu'} />
-          </Route>
-          <Route path="/item/:id">
-            <Cant>
+      <CartProvider>
+        <BrowserRouter>
+          <NavBar />
+          <Switch>
+            <Route exact path="/">
+              <Home titulo={'Pizzeria Signiorini'} />
+            </Route>
+            <Route path="/category/:id">
+              <ItemListContainer titulo={'Menu'} />
+            </Route>
+            <Route path="/item/:id">
+
               <ItemDetailContainer />
-            </Cant>
-          </Route>
-        </Switch>
-      </BrowserRouter>
+            </Route>
+          </Switch>
+        </BrowserRouter>
+      </CartProvider>
     </div>
   );
 }

@@ -91,7 +91,7 @@ export default function ItemDetailContainer(props){
             desc={item.descripcion} 
             precio={item.precio} 
             img={item.imgUrl}
-            item={item}/>
+            /*item={item}*//>
         </div>
     )
 }

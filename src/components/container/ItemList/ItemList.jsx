@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import Item from './../Item'
-import { Cant } from '../../../context/cartContext'
 import '../Item.css'
 import grandeMuzza from '../../../assets/imgs/grande-muzza.png'
 import grandeNapo from '../../../assets/imgs/grande-napo.png'
@@ -77,15 +76,14 @@ export default function ItemList(props) {
     return (
         <section className="items">
             {items.map((item) =>
-                <Cant>
-                    <Item
-                        name={item.nombre}
-                        descripcion={item.descripcion}
-                        precio={item.precio}
-                        img={item.imgUrl}
-                        id={item.id}
-                    />
-                </Cant>)}
+                <Item
+                    name={item.nombre}
+                    descripcion={item.descripcion}
+                    precio={item.precio}
+                    img={item.imgUrl}
+                    id={item.id}
+                />
+            )}
         </section>
     )
 }
