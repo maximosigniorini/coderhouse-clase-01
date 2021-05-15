@@ -5,7 +5,7 @@ import './CartContainer.css'
 
 export default function CartContainer() {
 
-    const { items, removeItems, total } = useContext(CartContext)
+    const { items, removeItems, total, clearItems } = useContext(CartContext)
 
     return (
         <div className='itemsCart'>
@@ -13,7 +13,7 @@ export default function CartContainer() {
                 <div className='itemCart'>
 
                     <div className='quitarBtn'>
-                        <span className='delete-btn' onClick={()=>removeItems(item.props.id)}>X</span>
+                        <span className='fas fa-minus-circle' onClick={()=>removeItems(item.props.id)}> </span>
                     </div>
 
                     <div className="image">
@@ -34,6 +34,7 @@ export default function CartContainer() {
                 </div>
             )}
             <div className='total'><b>Total: ${total()}</b></div>
+            <div className='borrarTodo' onClick={()=>clearItems()}><i class='fas fa-trash'></i> Limpiar Carrito</div>
         </div>
     )
 }
