@@ -26,6 +26,11 @@
     cursor: pointer;
 }
 
+.btnCompra:disabled{
+    cursor: not-allowed;
+    display: none;
+}
+
 .btnCompra:hover{
     background-color: chartreuse !important;
     opacity: .8;
