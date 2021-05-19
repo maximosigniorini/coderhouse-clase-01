@@ -6,7 +6,7 @@ import './NavBar.css'
 
 const CartWidget = () => {
 
-    const { items } = useContext(CartContext)
+    const { cantidadItems } = useContext(CartContext)
 
     return (
         <>
@@ -18,7 +18,7 @@ const CartWidget = () => {
                 <span class="fa-stack">
                     <span class="fas fa-shopping-cart"></span>
                     <strong class="fa-stack-1x">
-                        {items.length}
+                        {cantidadItems()}
                     </strong>
                 </span>
             </NavLink>
