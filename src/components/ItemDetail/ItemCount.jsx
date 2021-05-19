@@ -1,8 +1,8 @@
 import React, {useContext, useEffect, useState} from 'react' 
 import {NavLink} from 'react-router-dom'
-import { CartContext } from '../../../context/CartContext'
-import ButtonSignos from '../../Buttons/ButtonSignos'
-import ButtonCompra from '../../Buttons/ButtonCompra'
+import { CartContext } from '../../context/CartContext'
+import ButtonSignos from '../Buttons/ButtonSignos'
+import ButtonCompra from '../Buttons/ButtonCompra'
 
 export default function ItemCount(props, btnActivo){
     

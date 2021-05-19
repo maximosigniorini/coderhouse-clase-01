@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { CartContext } from '../../../context/CartContext'
-import ButtonSignos from '../../Buttons/ButtonSignos'
+import { CartContext } from '../../context/CartContext'
+import ButtonSignos from '../../components/Buttons/ButtonSignos'
 import './CartContainer.css'
 
 export default function CartContainer() {

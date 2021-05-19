@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import {useParams} from 'react-router-dom'
-import './ItemDetail.css'
-import ItemDetail from './ItemDetail'
-import grandeMuzza from '../../../assets/imgs/grande-muzza.png'
-import grandeNapo from '../../../assets/imgs/grande-napo.png'
-import grandeFuga from '../../../assets/imgs/grande-fuga.png'
-import empaJYQ from '../../../assets/imgs/empanada-jamon-y-queso.webp'
-import empaCarne from '../../../assets/imgs/empanada-carne.webp'
-import empaPollo from '../../../assets/imgs/empanada-pollo.webp'
+import '../components/ItemDetail/ItemDetail.css'
+import ItemDetail from '../components/ItemDetail/ItemDetail'
+import grandeMuzza from '../assets/imgs/grande-muzza.png'
+import grandeNapo from '../assets/imgs/grande-napo.png'
+import grandeFuga from '../assets/imgs/grande-fuga.png'
+import empaJYQ from '../assets/imgs/empanada-jamon-y-queso.webp'
+import empaCarne from '../assets/imgs/empanada-carne.webp'
+import empaPollo from '../assets/imgs/empanada-pollo.webp'
 
 
 export default function ItemDetailContainer(props){

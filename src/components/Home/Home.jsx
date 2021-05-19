@@ -1,6 +1,6 @@
 import React from 'react'
 import './Home.css'
-import logo from './../assets/imgs/logo.png'
+import logo from './../../assets/imgs/logo.png'
 
 export default function Home(props){
     return(

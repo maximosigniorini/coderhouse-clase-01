@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import Item from './../Item'
-import '../Item.css'
-import grandeMuzza from '../../../assets/imgs/grande-muzza.png'
-import grandeNapo from '../../../assets/imgs/grande-napo.png'
-import grandeFuga from '../../../assets/imgs/grande-fuga.png'
-import empaJYQ from '../../../assets/imgs/empanada-jamon-y-queso.webp'
-import empaCarne from '../../../assets/imgs/empanada-carne.webp'
-import empaPollo from '../../../assets/imgs/empanada-pollo.webp'
+import Item from './../Item/Item'
+import '../Item/Item.css'
+import grandeMuzza from '../../assets/imgs/grande-muzza.png'
+import grandeNapo from '../../assets/imgs/grande-napo.png'
+import grandeFuga from '../../assets/imgs/grande-fuga.png'
+import empaJYQ from '../../assets/imgs/empanada-jamon-y-queso.webp'
+import empaCarne from '../../assets/imgs/empanada-carne.webp'
+import empaPollo from '../../assets/imgs/empanada-pollo.webp'
 
 export default function ItemList(props) {
     const [items, setItems] = useState([])
