@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect } from 'react'
 
 export const CartContext = React.createContext([]);
 
@@ -21,7 +21,7 @@ export const CartProvider = ({ children }) => {
             console.log('Ya tengo eso!');
         }
         else {
-            const precioItem = subTotal(obj.props.precio, count) 
+            const precioItem = subTotal(obj.props.precio, count)
             setItems([...items, { ...obj, cnt: count, subTotal: precioItem }]);
         }
     };
@@ -50,28 +50,14 @@ export const CartProvider = ({ children }) => {
 
     //Calculo el precio de la cantidad de items que el usuario solicita
     const subTotal = (precio, count) => {
-        const precioItem = precio;
-        const precioItemStr = parseFloat(precioItem.substring(1));
-        const precioItemFinal = precioItemStr * count
-
-        return precioItemFinal;
+        return precio * count;
     }
 
-    function total (){
-        // const precioTotal = items.reduce((a,b)=>(a + (b.props.precio * b.cnt)),0)
-        const precios = []
-        let precioFinal = 0;
-        items.map((item) => {
-            const preciosStr = item.props.precio;
-            const preciosNum = parseFloat(preciosStr.substring(1))
-            precios.push(preciosNum);
-            precioFinal = precios.reduce((a, b) => { 
-                return a + b;
-            })
-        })
+    function total() {
+        const precioFinal = items.reduce((a, b) => (a + (b.props.precio * b.cnt)), 0)
 
         return precioFinal;
-      }
+    }
 
 
     return (

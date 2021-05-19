@@ -20,7 +20,7 @@ export default function ItemList(props) {
                     categoria: 'pizzas',
                     imgUrl: grandeMuzza,
                     descripcion: 'Pizza grande de muzzarella',
-                    precio: '$200'
+                    precio: 200
                 },
                 {
                     id: '02',
@@ -28,7 +28,7 @@ export default function ItemList(props) {
                     categoria: 'pizzas',
                     imgUrl: grandeNapo,
                     descripcion: 'Pizza grande a la napolitana',
-                    precio: '$300'
+                    precio: 300
                 },
                 {
                     id: '03',
@@ -36,7 +36,7 @@ export default function ItemList(props) {
                     categoria: 'pizzas',
                     imgUrl: grandeFuga,
                     descripcion: 'Pizza grande de fugazzeta',
-                    precio: '$300'
+                    precio: 300
                 },
                 {
                     id: '04',
@@ -44,7 +44,7 @@ export default function ItemList(props) {
                     categoria: 'empanadas',
                     imgUrl: empaJYQ,
                     descripcion: 'Empanada al horno de jamon y queso',
-                    precio: '$90'
+                    precio: 90
                 },
                 {
                     id: '05',
@@ -52,7 +52,7 @@ export default function ItemList(props) {
                     categoria: 'empanadas',
                     imgUrl: empaCarne,
                     descripcion: 'Empanada al horno de carne cortada al cuchillo',
-                    precio: '$90'
+                    precio: 90
                 },
                 {
                     id: '06',
@@ -60,7 +60,7 @@ export default function ItemList(props) {
                     categoria: 'empanadas',
                     imgUrl: empaPollo,
                     descripcion: 'Empanada al horno de pollo cortada al cuchillo',
-                    precio: '$90'
+                    precio: 90
                 }
             ]
             setTimeout(() => {
