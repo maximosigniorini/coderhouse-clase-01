@@ -6,12 +6,14 @@ export default function ItemDetail(props) {
 
     return (
         <div>
-            <img src={props.img} className='itemFoto'></img>
+            <div className="imgDetail">
+                <img src={props.img} className='itemFoto'></img>
+            </div>
             <div className="info">
                 <h1 className="tituloItem">{props.titulo}</h1>
                 <p>${props.precio}</p>
                 <p>{props.desc}</p>
-                <ItemCount props={props}/>
+                <ItemCount props={props} />
             </div>
         </div>
     )

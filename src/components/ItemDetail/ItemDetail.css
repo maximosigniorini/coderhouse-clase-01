@@ -8,7 +8,13 @@
 }
 
 .itemFoto{
-    width: 400px;
+    width: 300px;
+}
+
+.imgDetail{
+    display: inline-block;
+    width: 40vw;
+    border-right: solid .1em black;
 }
 
 .info{
@@ -45,4 +51,9 @@
 
 .btn{
     padding: 10px;
+}
+
+.spin-detail{
+    margin-left: 50vw;
+    margin-top: 30vh;
 }

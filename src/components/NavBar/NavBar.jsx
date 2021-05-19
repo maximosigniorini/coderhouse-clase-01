@@ -1,11 +1,15 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { NavLink } from 'react-router-dom'
+import { CartContext } from '../../context/CartContext'
 import './NavBar.css'
 import logo from './../../assets/imgs/logo.png'
 import CartWidget from './CartWidget'
 
 
 export default function NavBar() {
+
+    const { items } = useContext(CartContext)
+
     return (
         <nav className="NavBarItems">
             <NavLink to='/'><img src={logo} alt="" className="logo" /></NavLink>
@@ -21,7 +25,9 @@ export default function NavBar() {
                 </li>
                 <li><NavLink to='/conocenos' activeClassName='paginaActual'>Concenos | </NavLink></li>
                 <li><NavLink to='/contacto' activeClassName='paginaActual'>Contacto | </NavLink></li>
-                <CartWidget />
+                <>
+                {items.length > 0 ? <CartWidget /> : <span></span>}
+                </>
             </ul>
         </nav>
     )

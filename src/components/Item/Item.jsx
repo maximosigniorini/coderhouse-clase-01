@@ -10,7 +10,7 @@ export default function Item(props) {
             <img src={props.img}></img>
              <h2><Link to={`/item/${props.id}`}>{props.name}</Link></h2> 
             <p>{props.descripcion}</p>
-            <p>{props.precio}</p>
+            <p>${props.precio}</p>
             <Link to={`/item/${props.id}`}><ButtonSignos clase='fas fa-cart-plus btn' color='green' tamaño='2rem'></ButtonSignos></Link>
         </div>
     )

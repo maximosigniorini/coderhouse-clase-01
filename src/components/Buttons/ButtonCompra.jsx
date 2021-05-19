@@ -1,11 +1,10 @@
 import React from 'react'
 
-export default function ButtonCompra({ clase, color, texto, handlerClick, disabled }) {
+export default function ButtonCompra({ clase, color, texto, handlerClick }) {
 
     return (
         <button className='btnCompra'
             onClick={(handlerClick)}
-            disabled={disabled}
             style={
                 {
                     backgroundColor: color

@@ -10,6 +10,7 @@ import empaPollo from '../../assets/imgs/empanada-pollo.webp'
 
 export default function ItemList(props) {
     const [items, setItems] = useState([])
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         const task = new Promise((resolve, reject) => {
@@ -64,6 +65,7 @@ export default function ItemList(props) {
                 }
             ]
             setTimeout(() => {
+                setLoading(false)
                 resolve(productos)
             }, 2000)
         })
@@ -74,16 +76,20 @@ export default function ItemList(props) {
     }, [props.category])
 
     return (
-        <section className="items">
-            {items.map((item) =>
-                <Item
-                    name={item.nombre}
-                    descripcion={item.descripcion}
-                    precio={item.precio}
-                    img={item.imgUrl}
-                    id={item.id}
-                />
-            )}
-        </section>
+        <div className='items'> 
+            {loading ? <i class="fas fa-circle-notch fa-spin"></i> :
+                <section className="items">
+                    {items.map((item) =>
+                        <Item
+                            name={item.nombre}
+                            descripcion={item.descripcion}
+                            precio={item.precio}
+                            img={item.imgUrl}
+                            id={item.id}
+                        />
+                    )}
+                </section>
+            }
+        </div>
     )
 }

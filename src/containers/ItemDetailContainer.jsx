@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {useParams} from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import '../components/ItemDetail/ItemDetail.css'
 import ItemDetail from '../components/ItemDetail/ItemDetail'
 import grandeMuzza from '../assets/imgs/grande-muzza.png'
@@ -10,11 +10,12 @@ import empaCarne from '../assets/imgs/empanada-carne.webp'
 import empaPollo from '../assets/imgs/empanada-pollo.webp'
 
 
-export default function ItemDetailContainer(props){
+export default function ItemDetailContainer(props) {
 
-    const {id} = useParams()
+    const { id } = useParams()
 
     const [item, getItem] = useState([])
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         const task = new Promise((resolve, reject) => {
@@ -69,29 +70,34 @@ export default function ItemDetailContainer(props){
                 }
             ]
             setTimeout(() => {
+                setLoading(false)
                 resolve(productos)
             }, 2000)
         })
         task.then((res) => {
-            for(let i = 0; i < res.length;i++){
-                if(res[i].id == id){
+            for (let i = 0; i < res.length; i++) {
+                if (res[i].id == id) {
                     res = res[i]
                 }
             }
             getItem(res)
         })
     }, [])
-    
 
-    return(
-        <div className="itemContainer">
-            <ItemDetail 
-            id={id} 
-            titulo={item.nombre}
-            desc={item.descripcion} 
-            precio={item.precio} 
-            img={item.imgUrl}
-            /*item={item}*//>
-        </div>
+
+    return (
+        <>
+            {loading ? <div class="fas fa-circle-notch fa-spin spin-detail"></div> :
+                <div className="itemContainer">
+                    <ItemDetail
+                        id={id}
+                        titulo={item.nombre}
+                        desc={item.descripcion}
+                        precio={item.precio}
+                        img={item.imgUrl}
+            /*item={item}*/ />
+                </div>
+            }
+        </>
     )
 }

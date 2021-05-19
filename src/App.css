@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda&display=swap');
+
 *{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Bodoni Moda', serif;
 }
 
 body{

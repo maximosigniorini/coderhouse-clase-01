@@ -54,3 +54,15 @@ ul li:hover .subMenu{
 ul li{
     list-style-type: none;
 }
+
+.fa-stack-1x{
+    width: 35px;
+    height: 18px;
+    font-size: .7em;
+    margin-left: 35px;
+    margin-top: 7px;
+    background-color: lightblue;
+    border-radius: 10px;
+    line-height: 18px;
+    color: rgb(94, 87, 87)
+}
