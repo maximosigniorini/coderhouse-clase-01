@@ -1,5 +1,6 @@
-import React, {useContext} from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom'
+import { getFirestore } from '../../firebase'
 import { CartContext } from '../../context/CartContext'
 import './NavBar.css'
 import logo from './../../assets/imgs/logo.png'
@@ -9,6 +10,24 @@ import CartWidget from './CartWidget'
 export default function NavBar() {
 
     const { items } = useContext(CartContext)
+    const [categoria, setCategoria] = useState([])
+
+    useEffect(() => {
+        const db = getFirestore();
+        const categorias = db.collection('categorias');
+        categorias.get()
+            .then((querySnapshot) => {
+                const documentos = querySnapshot.docs.map((doc) => {
+                    return {
+                        id: doc.id,
+                        ...doc.data()
+                    }
+                    doc.data();
+                })
+                console.log(documentos);
+                setCategoria(documentos)
+            })
+    }, [])
 
     return (
         <nav className="NavBarItems">
@@ -18,15 +37,16 @@ export default function NavBar() {
                 <li><NavLink to='/category/menu' activeClassName='paginaActual'>Menu | </NavLink>
                     <div className='subMenu'>
                         <ul>
-                            <li><NavLink to='/category/pizzas'>Pizzas</NavLink></li>
-                            <li><NavLink to='/category/empanadas'>Empanadas</NavLink></li>
+                            {categoria.map((cat) =>
+                                <li><NavLink to={cat.id}>{cat.nombre}</NavLink></li>
+                            )}
                         </ul>
                     </div>
                 </li>
                 <li><NavLink to='/conocenos' activeClassName='paginaActual'>Concenos | </NavLink></li>
                 <li><NavLink to='/contacto' activeClassName='paginaActual'>Contacto | </NavLink></li>
                 <>
-                {items.length > 0 ? <CartWidget /> : <span></span>}
+                    {items.length > 0 ? <CartWidget /> : <span></span>}
                 </>
             </ul>
         </nav>
