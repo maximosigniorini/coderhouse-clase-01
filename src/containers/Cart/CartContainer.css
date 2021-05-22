@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda&display=swap');
 
-*{
-    font-family: 'Bodoni Moda', serif;
+* {
+  font-family: 'Bodoni Moda', serif;
 }
 
-.itemsCart{
+.itemsCart {
   width: 750px;
   height: 423px;
   margin: 80px auto;
-  box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.50);
+  box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.50);
   border-radius: 6px;
   display: flex;
   flex-direction: column;
 }
 
-.tituloCartCont{
+.tituloCartCont {
   height: 60px;
   padding: 20px 30px;
   font-weight: 400;
@@ -26,48 +26,48 @@
   margin-bottom: 5px;
 }
 
-.itemCart{
+.itemCart {
   padding: 20px 30px;
   height: 120px;
   display: flex;
 }
 
-.quitarBtn{
-    position: relative;
-    padding-top: 30px;
-    margin-right: 60px;
+.quitarBtn {
+  position: relative;
+  padding-top: 30px;
+  margin-right: 60px;
 }
 
-.fa-minus-circle{
+.fa-minus-circle {
   display: inline-block;
   cursor: pointer;
   font-size: 1.5em;
   border-radius: 40%;
 }
 
-.fa-minus-circle:hover{
-    color: rgba(255,0,0,1);
+.fa-minus-circle:hover {
+  color: rgba(255, 0, 0, 1);
 }
 
 .image {
-    margin-right: 50px;
-    margin-top: 10px;
-  }
+  margin-right: 50px;
+  margin-top: 10px;
+}
 
-.buttons{
+.buttons {
   padding-top: 30px;
   margin-right: 40px;
 }
 
-.btn{
-    margin-bottom: 3px;
+.btn {
+  margin-bottom: 3px;
 }
 
-.btn:focus{
-    outline: 0;
+.btn:focus {
+  outline: 0;
 }
 
-.subtotal{
+.subtotal {
   width: 80px;
   padding-top: 27px;
   text-align: center;
@@ -75,39 +75,44 @@
   font-weight: 300;
 }
 
-.total{
-    position: absolute;
-    width: 100px;
-    left: 70%;
-    top: 89%;
-    text-align: center;
-    font-size: 16px;
-    font-weight: 500;
-  }
+.total {
+  position: absolute;
+  width: 100px;
+  left: 70%;
+  top: 89%;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+}
 
-  .borrarTodo{
-    position: absolute;
-    top: 89%;
-    width: 150px;
-    margin-left: 3%;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-  }
+.borrarTodo {
+  position: absolute;
+  top: 89%;
+  width: 150px;
+  margin-left: 3%;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
 
-  .empty{
-    margin-top: 100px;
-  }
+.empty {
+  margin-top: 100px;
+}
 
-  .emptyTitle{
-    text-align: center;
-  }
+.emptyTitle {
+  text-align: center;
+}
 
-  .fa-heart-broken{
-    font-size: 2em;
-  }
+.fa-heart-broken {
+  font-size: 2em;
+}
 
-  .btn-volver{
-    margin-top: 50px;
-    margin-left: 42vw;
-  }
+.btn-volver {
+  margin-top: 50px;
+  margin-left: 42vw;
+}
+
+.finalizar{
+  margin-top: 50px;
+  margin-left: 42vw;
+}

@@ -38,7 +38,7 @@ export default function NavBar() {
                     <div className='subMenu'>
                         <ul>
                             {categoria.map((cat) =>
-                                <li><NavLink to={cat.id}>{cat.nombre}</NavLink></li>
+                                <li><NavLink to={`/category/${cat.id}`}>{cat.nombre}</NavLink></li>
                             )}
                         </ul>
                     </div>

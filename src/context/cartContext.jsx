@@ -5,6 +5,12 @@ export const CartContext = React.createContext([]);
 export const CartProvider = ({ children }) => {
 
     const [items, setItems] = useState([])
+    const [user, setUser] = useState({
+        name: "Usuario",
+        phone: 123456,
+        mail: "mail@mail.com"
+    })
+    const [order, setOrder] = useState([])
 
     useEffect(() => {
         console.log(items);

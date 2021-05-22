@@ -35,9 +35,7 @@ export default function CartContainer() {
                             </div>
 
                             <div className="buttons">
-                                {/* <ButtonSignos clase='fas fa-minus btn' /> */}
                                 <span> Cantidad: {item.cnt} </span>
-                                {/* <ButtonSignos clase='fas fa-plus btn' /> */}
                             </div>
 
                             <div className='subtotal'>Subtotal ${item.subTotal} </div>
@@ -45,6 +43,7 @@ export default function CartContainer() {
                     )}
                     <div className='total'><b>Total: ${total()}</b></div>
                     <div className='borrarTodo' onClick={() => clearItems()}><i class='fas fa-trash'></i> Limpiar Carrito</div>
+                    <ButtonCompra clase='finalizar' color='green' texto='Finalizar Compra' />
                 </div>
                 : <div className='empty'>
                     <h2 className='emptyTitle'>No hay items <i className='fas fa-heart-broken'></i></h2>

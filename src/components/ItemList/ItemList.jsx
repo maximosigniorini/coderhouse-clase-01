@@ -12,13 +12,13 @@ export default function ItemList(props) {
         const db = getFirestore();
         const productos = db.collection('productos');
         const productosFiltrados = productos.where('categoria', '==', props.category);
+        let query = props.category === undefined || props.category === 'menu' ? productos : productosFiltrados;
 
-        if(props.category === undefined || props.category === 'menu'){
-            productos.get()
+        query.get()
             .then((querySnapshot) => {
                 querySnapshot.size === 0 ? console.log('No hay items :(') : console.log(`Hay ${querySnapshot.size} items`)
                 const documentos = querySnapshot.docs.map((doc) => {
-                    return{
+                    return {
                         id: doc.id,
                         ...doc.data()
                     }
@@ -29,23 +29,7 @@ export default function ItemList(props) {
             })
             .catch((err) => console.log('ocurrio un error', err))
             .finally(() => setLoading(false))
-        } else {
-            productosFiltrados.get()
-            .then((querySnapshot) => {
-                querySnapshot.size === 0 ? console.log('No hay items :(') : console.log(`Hay ${querySnapshot.size} items`)
-                const documentos = querySnapshot.docs.map((doc) => {
-                    return{
-                        id: doc.id,
-                        ...doc.data()
-                    }
-                    doc.data();
-                })
-                console.log(documentos);
-                setItems(documentos)
-            })
-            .catch((err) => console.log('ocurrio un error', err))
-            .finally(() => setLoading(false))
-        }
+            
     }, [props.category])
 
     return (
