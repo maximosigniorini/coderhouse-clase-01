@@ -6,7 +6,7 @@ export default function Home(props){
     return(
         <div className='container'>
             <h1>{props.titulo}</h1>
-            <img src={logo} className='mainLogo'></img>
+            <img src={logo} className='mainLogo' alt='logo-signiorini'></img>
             <p className='homeDesc'>Somos una empresa con 40 años de trayectoria. Atendemos al público en general con trato personalizado. Visite nuestra pizzería y nuestro local de platos gourmet para llevar, lo esperamos en Villa Urquiza.</p>
         </div>
     )

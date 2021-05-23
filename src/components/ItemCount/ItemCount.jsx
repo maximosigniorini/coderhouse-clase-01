@@ -11,11 +11,7 @@ export default function ItemCount(props, btnActivo) {
     const [botonActivo, setBotonActivo] = useState(false);
 
     useEffect(() => {
-        if (cant === 0) {
-            setBotonActivo(false)
-        } else {
-            setBotonActivo(true)
-        }
+        cant === 0 ? setBotonActivo(false) : setBotonActivo(true);
     }, [cant])
 
     const sumar = () => {

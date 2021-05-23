@@ -7,7 +7,7 @@ export default function Item(props) {
 
     return (
         <div className="item">
-            <img src={props.img}></img>
+            <img src={props.img} alt='item'></img>
              <h2><Link to={`/item/${props.id}`}>{props.name}</Link></h2> 
             <p>{props.descripcion}</p>
             <p>${props.precio}</p>

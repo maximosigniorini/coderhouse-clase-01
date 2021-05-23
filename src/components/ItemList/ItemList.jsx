@@ -12,11 +12,11 @@ export default function ItemList(props) {
         const db = getFirestore();
         const productos = db.collection('productos');
         const productosFiltrados = productos.where('categoria', '==', props.category);
+        //Si selecciono 'menu' en la navbar en vez de alguna categoria me muestra todos los productos
         let query = props.category === undefined || props.category === 'menu' ? productos : productosFiltrados;
 
         query.get()
             .then((querySnapshot) => {
-                querySnapshot.size === 0 ? console.log('No hay items :(') : console.log(`Hay ${querySnapshot.size} items`)
                 const documentos = querySnapshot.docs.map((doc) => {
                     return {
                         id: doc.id,
@@ -24,7 +24,6 @@ export default function ItemList(props) {
                     }
                     doc.data();
                 })
-                console.log(documentos);
                 setItems(documentos)
             })
             .catch((err) => console.log('ocurrio un error', err))

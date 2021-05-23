@@ -11,10 +11,6 @@ const CartWidget = () => {
     return (
         <>
             <li><NavLink to='/cart'>
-                {/* <span class="fa-layers fa-fw">
-                    <i class="fas fa-shopping-cart"></i>
-                </span> */}
-
                 <span class="fa-stack">
                     <span class="fas fa-shopping-cart"></span>
                     <strong class="fa-stack-1x">

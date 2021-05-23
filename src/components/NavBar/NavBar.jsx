@@ -24,7 +24,6 @@ export default function NavBar() {
                     }
                     doc.data();
                 })
-                console.log(documentos);
                 setCategoria(documentos)
             })
     }, [])

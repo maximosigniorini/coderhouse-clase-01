@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import firebase from "firebase/app";
 import "firebase/firestore";
 import { getFirestore } from "../firebase";
@@ -13,10 +13,6 @@ export const CartProvider = ({ children }) => {
     mail: "mail@mail.com",
   });
 
-  useEffect(() => {
-    console.log(items);
-  }, [items]);
-
   const isInCart = (id) => {
     const estaEnCart = items.some((x) => x.props.id === id);
     return estaEnCart;
@@ -25,7 +21,6 @@ export const CartProvider = ({ children }) => {
   const addItems = (count, obj) => {
     if (isInCart(obj.props.id)) {
       sumarDuplicado(obj, count);
-      console.log("Ya tengo eso!");
     } else {
       const precioItem = subTotal(obj.props.precio, count);
       setItems([...items, { ...obj, cnt: count, subTotal: precioItem }]);
@@ -83,7 +78,6 @@ export const CartProvider = ({ children }) => {
       .add(compraFinal)
       .then(({ id }) => {
         alert(`Your order n° ${id} is sucefully created`);
-        console.log(id);
       })
       .catch((err) => {
         console.log(err);

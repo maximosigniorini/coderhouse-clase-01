@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom'
 import { CartContext } from '../../context/CartContext'
 import ButtonCompra from '../../components/Buttons/ButtonCompra'
@@ -7,12 +7,6 @@ import './CartContainer.css'
 export default function CartContainer() {
 
     const { items, removeItems, total, clearItems, finalizarCompra } = useContext(CartContext)
-
-    const [loading, setLoading] = useState(true)
-
-    useEffect(() => {
-
-    }, [])
 
     return (
         <>
@@ -26,7 +20,7 @@ export default function CartContainer() {
                             </div>
 
                             <div className="image">
-                                <img src={item.props.img} className='fotoCart'></img>
+                                <img src={item.props.img} className='fotoCart' alt='foto-item'></img>
                             </div>
 
                             <div className='tituloCartCont'>
