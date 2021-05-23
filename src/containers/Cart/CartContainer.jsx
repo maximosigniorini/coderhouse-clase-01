@@ -6,8 +6,7 @@ import './CartContainer.css'
 
 export default function CartContainer() {
 
-    const { items, removeItems, total, clearItems } = useContext(CartContext)
-    console.log(items);
+    const { items, removeItems, total, clearItems, finalizarCompra } = useContext(CartContext)
 
     const [loading, setLoading] = useState(true)
 
@@ -43,12 +42,12 @@ export default function CartContainer() {
                     )}
                     <div className='total'><b>Total: ${total()}</b></div>
                     <div className='borrarTodo' onClick={() => clearItems()}><i class='fas fa-trash'></i> Limpiar Carrito</div>
-                    <ButtonCompra clase='finalizar' color='green' texto='Finalizar Compra' />
+                    <ButtonCompra clase='finalizar' color='green' texto='Finalizar Compra' handlerClick={()=>finalizarCompra()}/>
                 </div>
                 : <div className='empty'>
                     <h2 className='emptyTitle'>No hay items <i className='fas fa-heart-broken'></i></h2>
                     <div className='btn-volver'>
-                        <NavLink to='/category/menu'><ButtonCompra color='grey' texto='Agregar Items' /></NavLink>
+                        <NavLink to='/category/menu'><ButtonCompra color='grey' texto='Agregar Items'/></NavLink>
                     </div>
                 </div>
             }
