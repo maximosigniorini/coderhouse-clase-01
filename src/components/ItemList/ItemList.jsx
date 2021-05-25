@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { getFirestore } from '../../firebase'
 import Item from './../Item/Item'
-import '../Item/Item.css'
 
 export default function ItemList(props) {
     const [items, setItems] = useState([])

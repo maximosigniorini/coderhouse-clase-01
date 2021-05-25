@@ -1,7 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import ButtonSignos from '../Buttons/ButtonSignos'
-import './Item.css'
 
 export default function Item(props) {
 

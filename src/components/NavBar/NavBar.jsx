@@ -1,53 +1,63 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom'
-import { getFirestore } from '../../firebase'
-import { CartContext } from '../../context/CartContext'
-import './NavBar.css'
-import logo from './../../assets/imgs/logo.png'
-import CartWidget from './CartWidget'
-
+import React, { useContext, useState } from "react";
+import { NavLink } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
+import logo from "./../../assets/imgs/logo.png";
+import CartWidget from "./CartWidget";
+import Dropdown from './Dropdown'
 
 export default function NavBar() {
-
-    const { items } = useContext(CartContext)
-    const [categoria, setCategoria] = useState([])
-
-    useEffect(() => {
-        const db = getFirestore();
-        const categorias = db.collection('categorias');
-        categorias.get()
-            .then((querySnapshot) => {
-                const documentos = querySnapshot.docs.map((doc) => {
-                    return {
-                        id: doc.id,
-                        ...doc.data()
-                    }
-                    doc.data();
-                })
-                setCategoria(documentos)
-            })
-    }, [])
+    const { items } = useContext(CartContext);
+    const [navbarOpen, setNavbarOpen] = useState(false)
 
     return (
-        <nav className="NavBarItems">
-            <NavLink to='/'><img src={logo} alt="" className="logo" /></NavLink>
-            <ul className="nav-menu">
-                <li><NavLink exact to='/' activeClassName='paginaActual'>Inicio | </NavLink></li>
-                <li><NavLink to='/category/menu' activeClassName='paginaActual'>Menu | </NavLink>
-                    <div className='subMenu'>
-                        <ul>
-                            {categoria.map((cat) =>
-                                <li><NavLink to={`/category/${cat.id}`}>{cat.nombre}</NavLink></li>
-                            )}
-                        </ul>
-                    </div>
-                </li>
-                <li><NavLink to='/conocenos' activeClassName='paginaActual'>Concenos | </NavLink></li>
-                <li><NavLink to='/contacto' activeClassName='paginaActual'>Contacto | </NavLink></li>
-                <>
-                    {items.length > 0 ? <CartWidget /> : <span></span>}
-                </>
-            </ul>
+        <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 mb-3 shadow">
+            <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
+                <div class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+                    <NavLink to="/">
+                        <img src={logo} alt="" className="logo w-14" />
+                    </NavLink>
+
+                    <button
+                        className="text-black cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+                        type="button"
+                        onClick={() => setNavbarOpen(!navbarOpen)}
+                    >
+                        <i className="fas fa-bars"></i>
+                    </button>
+                </div>
+
+                <div
+                    className={
+                        "lg:flex flex-grow items-center" +
+                        (navbarOpen ? " flex" : " hidden")
+                    }
+                    id="example-navbar-danger"
+                >
+                    <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
+                        <li className="nav-item">
+                            <NavLink exact to='/' className='px-3 py-2 flex items-center text-s uppercase leading-snug text-black hover:opacity-75'>
+                                <span className="ml-2">Inicio</span>
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <Dropdown />
+                        </li>
+                        <li className="nav-item">
+                            <NavLink exact to='/conocenos' className='px-3 py-2 flex items-center text-s uppercase leading-snug text-black hover:opacity-75'>
+                                <span className="ml-2">Conocenos</span>
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink exact to='/contacto' className='px-3 py-2 flex items-center text-s uppercase leading-snug text-black hover:opacity-75'>
+                                <span className="ml-2">Contacto</span>
+                            </NavLink>
+                        </li>
+                    </ul>
+                    <>
+                        {items.length > 0 ? <CartWidget /> : <></>}
+                    </>
+                </div>
+            </div>
         </nav>
-    )
+    );
 }

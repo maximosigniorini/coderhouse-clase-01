@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import ButtonCompra from "../../components/Buttons/ButtonCompra";
-import "./CartContainer.css";
 
 export default function CartContainer() {
   const { items, removeItems, total, clearItems, finalizarCompra, orderFinished } = useContext(CartContext);
