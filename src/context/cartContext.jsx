@@ -77,7 +77,7 @@ export const CartProvider = ({ children }) => {
     orders
       .add(compraFinal)
       .then(({ id }) => {
-        alert(`Your order n° ${id} is sucefully created`);
+        alert(`¡Gracias por comprar en Signiorini!\n Su numero de orden es: ${id}`);
       })
       .catch((err) => {
         console.log(err);
