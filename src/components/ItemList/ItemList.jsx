@@ -32,8 +32,8 @@ export default function ItemList(props) {
 
     return (
         <div className='items'>
-            {loading ? <i class="fas fa-circle-notch fa-spin"></i> :
-                <section className="items">
+            {loading ? <i class="fas fa-circle-notch fa-spin flex items-center justify-center text-6xl mt-8"></i> :
+                <section className="items grid grid-rows-1 grid-flow-col gap-1 mt-16">
                     {items.map((item) =>
                         <Item
                             name={item.nombre}

@@ -8,7 +8,7 @@ const ItemListContainer = (props) => {
 
     return (
         <div>
-            <h1 className="titulo">{props.titulo}</h1>
+            <h1 className="text-4xl text-center mt-16">{props.titulo}</h1>
             <ItemList category={id}/>
         </div>
     )
