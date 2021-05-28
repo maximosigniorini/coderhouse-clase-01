@@ -1,4 +1,4 @@
-# Coderhouse - React.js Clase 01
+# Coderhouse - React.js
 
 Este es el repositorio para el trabajo practico final de React.Js en CoderHouse.\
 Mi objetivo es realizar la pagina web para la pizzeria de mi viejo.\
