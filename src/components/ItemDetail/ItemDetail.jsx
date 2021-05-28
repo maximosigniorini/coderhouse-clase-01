@@ -6,13 +6,13 @@ export default function ItemDetail(props) {
 
     return (
         <div>
-            <div className="imgDetail">
+            <div className="w-96 mt-16 ml-12 inline-block">
                 <img src={props.img} className='itemFoto' alt='foto-item'></img>
             </div>
-            <div className="info">
-                <h1 className="tituloItem">{props.titulo}</h1>
-                <p>${props.precio}</p>
-                <p>{props.desc}</p>
+            <div className="float-right mr-48 mt-20 inline-block">
+                <h1 className="text-4xl">{props.titulo}</h1>
+                <p className='mt-4 text-xl font-bold'>${props.precio}</p>
+                <p className='mt-8 text-lg italic'>{props.desc}</p>
                 <ItemCount props={props} />
             </div>
         </div>

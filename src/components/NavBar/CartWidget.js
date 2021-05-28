@@ -9,11 +9,11 @@ const CartWidget = () => {
 
     return (
         <>
-            <div class="flex justify-center md:block">
-                <li><NavLink to='/cart' className='relative text-gray-700 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300'>
+            <div className='ml-4 mr-4'>
+                <li className='list-none'><NavLink to='/cart' className='text-gray-700 hover:text-gray-600 text-md'>
                     <span class="fa-stack">
                         <span class="fas fa-shopping-cart"></span>
-                        <strong class="fa-stack-1x">
+                        <strong class="fa-stack-1x mt-1 ml-6 bg-blue-300 hover:bg-blue-100 rounded-full w-6 h-6 leading-6">
                             {cantidadItems()}
                         </strong>
                     </span>
