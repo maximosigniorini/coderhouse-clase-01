@@ -33,7 +33,7 @@ export default function ItemList(props) {
     return (
         <div className='items'>
             {loading ? <i class="fas fa-circle-notch fa-spin flex items-center justify-center text-6xl mt-8"></i> :
-                <section className="flex flex-auto items-center justify-center mt-8">
+                <section className="flex flex-wrap items-center justify-center mt-8">
                     {items.map((item) =>
                         <Item
                             name={item.nombre}

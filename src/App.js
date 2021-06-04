@@ -9,9 +9,8 @@ import { CartProvider } from './context/CartContext'
 
 
 function App() {
-
   return (
-    <div className="App bg-gradient-to-b from-red-500 to-green-400 h-screen">
+    <div className="App min-h-screen bg-gradient-to-b from-red-500 to-green-400">
       <CartProvider>
         <BrowserRouter>
           <NavBar />

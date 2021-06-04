@@ -33,14 +33,14 @@ export default function ItemCount(props, btnActivo) {
     }
 
     return (
-        <div className='mt-8 flex items-center justify-center'>
+        <div className='mt-8 flex items-center'>
             <ButtonSignos clase='fas fa-minus btn mr-4 text-xl' handlerClick={restar} />
-            <span className='mr-4 float-right text-xl'> {cant} </span>
+            <span className='mr-4 lg:float-right text-xl'> {cant} </span>
             <ButtonSignos clase='fas fa-plus btn mr-4 text-xl' handlerClick={sumar} />
             <>
-                {botonActivo ? <ButtonCompra clase='rounded-lg h-14 w-24 text-xl ml-10 bg-green-600 hover:bg-green-400' texto='Comprar' handlerClick={onAdd} />
+                {botonActivo ? <ButtonCompra clase='rounded-lg h-14 w-24 text-xl ml-10 mb-4 bg-green-600 hover:bg-green-400' texto='Comprar' handlerClick={onAdd} />
                     :
-                    <NavLink to='/cart'><ButtonCompra clase='rounded-lg h-14 w-40 text-xl ml-10 bg-red-500 hover:bg-red-300' texto='Terminar Compra' /></NavLink>
+                    <NavLink to='/cart'><ButtonCompra clase='rounded-lg h-14 w-40 text-xl ml-10 mb-4 bg-red-500 hover:bg-red-300' texto='Terminar Compra' /></NavLink>
                 }
             </>
         </div>
