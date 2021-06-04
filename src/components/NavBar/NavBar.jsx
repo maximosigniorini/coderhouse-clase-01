@@ -20,23 +20,22 @@ export default function NavBar() {
                     <button
                         className="text-black cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
                         type="button"
-                        onClick={() => setNavbarOpen(!navbarOpen)}
-                    >
+                        onClick={() => setNavbarOpen(!navbarOpen)}>
                         <i className="fas fa-bars"></i>
                     </button>
                 </div>
-
+{/*lg:flex flex-grow items-center  */}
                 <div
                     className={
-                        "lg:flex flex-grow items-center" +
-                        (navbarOpen ? " flex" : " hidden")
+                        "lg:flex ml-auto order-2 clear-both" +
+                        (navbarOpen ? "flex" : " hidden")
                     }
                     id="example-navbar-danger"
                 >
                     <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
                         <li className="nav-item">
                             <NavLink exact to='/' className='px-3 py-2 flex items-center text-s uppercase leading-snug text-black hover:opacity-75'>
-                                <span className="ml-2">Inicio</span>
+                                <span className="flex-1 text-right">Inicio</span>
                             </NavLink>
                         </li>
                         <li className="nav-item">
@@ -44,12 +43,12 @@ export default function NavBar() {
                         </li>
                         <li className="nav-item">
                             <NavLink exact to='/conocenos' className='px-3 py-2 flex items-center text-s uppercase leading-snug text-black hover:opacity-75'>
-                                <span className="ml-2">Conocenos</span>
+                                <span className="flex-1 text-right">Conocenos</span>
                             </NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink exact to='/contacto' className='px-3 py-2 flex items-center text-s uppercase leading-snug text-black hover:opacity-75'>
-                                <span className="ml-2">Contacto</span>
+                                <span className="flex-1 text-right">Contacto</span>
                             </NavLink>
                         </li>
                     </ul>

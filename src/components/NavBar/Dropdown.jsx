@@ -23,15 +23,15 @@ export default function Dropdown() {
     }, []);
 
     return (
-        <div className='container'>
+        <div className='flex ml-16 lg:ml-0 order-2 clear-both'>
             <button
                 className="focus:outline-none focus:shadow-solid px-3 py-2 flex items-center text-s uppercase leading-snug text-black hover:opacity-75"
                 onClick={() => setShow(!show)}
-            ><span className="ml-2">Menú</span></button>
+            ><span className="flex-1 text-right">Menú</span></button>
 
             <>
                 {show ?
-                    <div className="absolute w-28 py-2 mt-1 bg-red-800 rounded shadow-md">
+                    <div className="absolute w-28 py-2 mt-8 -ml-8 bg-red-800 rounded shadow-md">
                         <ul>
                             {categoria.map((cat) =>
                                 <li><NavLink to={`/category/${cat.id}`} className="block px-4 py-2 hover:text-red-100">{cat.nombre}</NavLink></li>
