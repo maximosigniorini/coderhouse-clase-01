@@ -4,14 +4,14 @@ import { CartContext } from "../../context/CartContext";
 import ButtonCompra from "../../components/Buttons/ButtonCompra";
 
 export default function CartContainer() {
-  const { items, removeItems, total, clearItems, finalizarCompra, orderFinished } = useContext(CartContext);
+  const { items, removeItems, total, clearItems, finalizarCompra, idCompra } = useContext(CartContext);
   const [loading, setLoading] = useState(false)
   return (
     <>
       {items.length > 0 && !loading ? (
         <div className="w-10/12 lg:w-3/4 lg:m-2 h-96 lg:h-72 shadow-sm flex flex-col mt-8 lg:mt-16 ml-12 lg:ml-56 overflow-scroll">
           {items.map((item) => (
-            <div className="p-2 h-32 flex mt-4">
+            <div className="p-2 h-32 flex mt-4" key={item.id}>
               <div className="relative pt-2 mr-4">
                 <span
                   className="fas fa-minus-circle inline-block cursor-pointer text-lg lg:text-xl rounded text-gray-800 hover:text-gray-500 mt-8 mr-4"
@@ -40,7 +40,7 @@ export default function CartContainer() {
             <b>Total: ${total()}</b>
           </div>
           <div className="absolute w-48 bottom-0 lg:bottom-16 mb-24 cursor-pointer" onClick={() => clearItems()}>
-            <i class="fas fa-trash"></i> Limpiar Carrito
+            <i className="fas fa-trash"></i> Limpiar Carrito
           </div>
           <ButtonCompra
             clase="absolute bottom-0 lg:bottom-16 lg:mt-20 mb-4 -ml-12 lg:ml-20 left-3/4 w-36 h-12 rounded shadow bg-green-700 hover:bg-green-400"
@@ -51,19 +51,23 @@ export default function CartContainer() {
             }}
           />
         </div>
-      ) : 
-      (
-        <div className="mt-28 text-center">
-          <h2 className="text-3xl">
-            No hay items <i className="fas fa-heart-broken text-4xl"></i>
-          </h2>
-          <div className="mt-16 text-center text-2xl">
-            <NavLink to="/">
-              <ButtonCompra clase='bg-gray-500 rounded h-10 w-52' texto="Agregar Items" />
-            </NavLink>
+      ) : loading === false ?
+        (
+          <div className="mt-28 text-center">
+            <h2 className="text-3xl">
+              No hay items <i className="fas fa-heart-broken text-4xl"></i>
+            </h2>
+            <div className="mt-16 text-center text-2xl">
+              <NavLink to="/">
+                <ButtonCompra clase='bg-gray-500 rounded h-10 w-52' texto="Agregar Items" />
+              </NavLink>
+            </div>
           </div>
+        ) :
+        <div className="mx-auto p-5 mb-3.5 bg-green-500 w-6/12 mt-48 text-center text-white rounded-xl">
+            {`¡Gracias por comprar en Signiorini!\n Su numero de orden es: ${idCompra}`}
         </div>
-      )}
+      }
     </>
   );
 }

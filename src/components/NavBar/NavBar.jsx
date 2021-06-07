@@ -12,7 +12,7 @@ export default function NavBar() {
     return (
         <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 mb-3 shadow">
             <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
-                <div class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+                <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
                     <NavLink to="/">
                         <img src={logo} alt="" className="logo w-14" />
                     </NavLink>
@@ -24,7 +24,6 @@ export default function NavBar() {
                         <i className="fas fa-bars"></i>
                     </button>
                 </div>
-{/*lg:flex flex-grow items-center  */}
                 <div
                     className={
                         "lg:flex ml-auto order-2 clear-both" +

@@ -37,7 +37,7 @@ export default function ItemDetailContainer(props) {
   return (
     <>
       {loading ? (
-        <div class="fas fa-circle-notch fa-spin flex items-center justify-center text-6xl mt-8"></div>
+        <div className="fas fa-circle-notch fa-spin flex items-center justify-center text-6xl mt-8"></div>
       ) : (
         <div className="itemContainer">
           <ItemDetail

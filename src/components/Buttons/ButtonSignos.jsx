@@ -4,7 +4,7 @@ export default function ButtonSignos({ clase, tamaño, color, handlerClick }) {
   return (
     <span>
       <i
-        class={clase}
+        className={clase}
         onClick={handlerClick}
         style={{ cursor: "pointer", color: color, fontSize: tamaño }}
       ></i>

@@ -13,6 +13,8 @@ export const CartProvider = ({ children }) => {
     mail: "mail@mail.com",
   });
 
+  const [idCompra, setIdCompra] = useState('');
+
   const isInCart = (id) => {
     const estaEnCart = items.some((x) => x.props.id === id);
     return estaEnCart;
@@ -77,7 +79,7 @@ export const CartProvider = ({ children }) => {
     orders
       .add(compraFinal)
       .then(({ id }) => {
-        alert(`¡Gracias por comprar en Signiorini!\n Su numero de orden es: ${id}`);
+        setIdCompra(id)
       })
       .catch((err) => {
         console.log(err);
@@ -96,6 +98,7 @@ export const CartProvider = ({ children }) => {
         total,
         cantidadItems,
         finalizarCompra,
+        idCompra
       }}
     >
       {children}

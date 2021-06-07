@@ -34,7 +34,7 @@ export default function Dropdown() {
                     <div className="absolute w-28 py-2 mt-8 -ml-8 bg-red-800 rounded shadow-md">
                         <ul>
                             {categoria.map((cat) =>
-                                <li><NavLink to={`/category/${cat.id}`} className="block px-4 py-2 hover:text-red-100">{cat.nombre}</NavLink></li>
+                                <li key={cat.id}><NavLink to={`/category/${cat.id}`} className="block px-4 py-2 hover:text-red-100">{cat.nombre}</NavLink></li>
                             )}
                         </ul>
                     </div>
