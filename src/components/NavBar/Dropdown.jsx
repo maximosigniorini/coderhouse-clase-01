@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { NavLink } from "react-router-dom";
 import { getFirestore } from "../../firebase";
 
@@ -6,6 +6,7 @@ export default function Dropdown() {
 
     const [show, setShow] = useState(false);
     const [categoria, setCategoria] = useState([]);
+    const container = useRef(null);
 
     useEffect(() => {
         const db = getFirestore();
@@ -21,6 +22,17 @@ export default function Dropdown() {
             setCategoria(documentos);
         });
     }, []);
+
+    useEffect(() => {
+        const handleOutsideClick = (event) => {
+            if (!show) return;
+            setShow(false);
+        };
+    
+        window.addEventListener('click', handleOutsideClick);
+        return () => window.removeEventListener('click', handleOutsideClick);
+      }, [show, container]);
+    
 
     return (
         <div className='flex ml-16 lg:ml-0 order-2 clear-both'>
