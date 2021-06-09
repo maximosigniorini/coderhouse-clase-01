@@ -6,6 +6,8 @@ import ItemListContainer from './containers/ItemList/ItemListContainer'
 import ItemDetailContainer from './containers/ItemDetailContainer'
 import Cart from './containers/Cart/CartContainer'
 import { CartProvider } from './context/CartContext'
+import Conocenos from './components/Conocenos/Conocenos'
+import Contacto from './components/Contacto/Contacto'
 
 
 function App() {
@@ -26,6 +28,12 @@ function App() {
             </Route>
             <Route path="/cart">
                 <Cart />
+            </Route>
+            <Route path="/conocenos">
+                <Conocenos />
+            </Route>
+            <Route path="/contacto">
+                <Contacto />
             </Route>
           </Switch>
         </BrowserRouter>

@@ -39,7 +39,7 @@ export default function Dropdown() {
             <button
                 className="focus:outline-none focus:shadow-solid px-3 py-2 flex items-center text-s uppercase leading-snug text-black hover:opacity-75"
                 onClick={() => setShow(!show)}
-            ><span className="flex-1 text-right">Menú</span></button>
+            ><span className="flex-1 text-right text-black hover:text-gray-500">Menú</span></button>
 
             <>
                 {show ?

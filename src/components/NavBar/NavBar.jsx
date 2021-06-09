@@ -33,8 +33,8 @@ export default function NavBar() {
                 >
                     <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
                         <li className="nav-item">
-                            <NavLink exact to='/' className='px-3 py-2 flex items-center text-s uppercase leading-snug text-black hover:opacity-75'>
-                                <span className="flex-1 text-right">Inicio</span>
+                            <NavLink exact to='/' className='px-3 py-2 flex items-center text-s uppercase leading-snug text-black hover:opacity-60'>
+                                <span className="flex-1 text-right text-black hover:text-gray-500">Inicio</span>
                             </NavLink>
                         </li>
                         <li className="nav-item">
@@ -42,12 +42,12 @@ export default function NavBar() {
                         </li>
                         <li className="nav-item">
                             <NavLink exact to='/conocenos' className='px-3 py-2 flex items-center text-s uppercase leading-snug text-black hover:opacity-75'>
-                                <span className="flex-1 text-right">Conocenos</span>
+                                <span className="flex-1 text-right text-black hover:text-gray-500">Conocenos</span>
                             </NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink exact to='/contacto' className='px-3 py-2 flex items-center text-s uppercase leading-snug text-black hover:opacity-75'>
-                                <span className="flex-1 text-right">Contacto</span>
+                                <span className="flex-1 text-right text-black hover:text-gray-500">Contacto</span>
                             </NavLink>
                         </li>
                     </ul>
