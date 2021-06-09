@@ -65,6 +65,14 @@ export const CartProvider = ({ children }) => {
     return itemsTotales;
   }
 
+  function crearUsuario(form){
+    setUser({
+      name: form.name,
+      phone: form.phone,
+      mail: form.email,
+    })
+  }
+
   function finalizarCompra() {
     const compraFinal = {
       user,
@@ -72,6 +80,8 @@ export const CartProvider = ({ children }) => {
       date: firebase.firestore.Timestamp.fromDate(new Date()),
       precio: total(),
     };
+
+    console.log('datos: ', compraFinal);
 
     const db = getFirestore();
     const orders = db.collection("orders");
@@ -98,7 +108,8 @@ export const CartProvider = ({ children }) => {
         total,
         cantidadItems,
         finalizarCompra,
-        idCompra
+        idCompra,
+        crearUsuario
       }}
     >
       {children}
