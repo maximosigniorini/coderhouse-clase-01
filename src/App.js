@@ -30,7 +30,7 @@ function App() {
                 <Cart />
             </Route>
             <Route path="/conocenos">
-                <Conocenos />
+                <Conocenos titulo={'Pizzeria Signiorini'}/>
             </Route>
             <Route path="/contacto">
                 <Contacto />

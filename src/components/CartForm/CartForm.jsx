@@ -66,7 +66,7 @@ export default function CartForm() {
                                     className={`bg-green py-2 px-4 text-sm text-white rounded border border-green focus:outline-none focus:border-green-dark`}
                                 >
                                     Finalizar Compra
-                        </button>
+                                </button>
                             </div>
                         </form>
                     </>
