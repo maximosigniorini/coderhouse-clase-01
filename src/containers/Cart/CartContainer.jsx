@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
-import { NavLink } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import ButtonCompra from "../../components/Buttons/ButtonCompra";
 import CartForm from "../../components/CartForm/CartForm"
+import NoItems from '../../components/NoItems/NoItems'
 
 export default function CartContainer() {
   const { items, removeItems, total, clearItems } = useContext(CartContext);
@@ -55,16 +55,7 @@ export default function CartContainer() {
       ) : showForm ? (
         <CartForm/>
       ) :
-        <div className="mt-28 text-center">
-          <h2 className="text-3xl">
-            No hay items <i className="fas fa-heart-broken text-4xl"></i>
-          </h2>
-          <div className="mt-16 text-center text-2xl">
-            <NavLink to="/">
-              <ButtonCompra clase='bg-gray-500 rounded h-10 w-52' texto="Agregar Items" />
-            </NavLink>
-          </div>
-        </div>
+        <NoItems />
       }
     </>
   );

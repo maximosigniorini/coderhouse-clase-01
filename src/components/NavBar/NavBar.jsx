@@ -50,10 +50,8 @@ export default function NavBar() {
                                 <span className="flex-1 text-right text-black hover:text-gray-500">Contacto</span>
                             </NavLink>
                         </li>
+                        <li><CartWidget /></li>
                     </ul>
-                    <>
-                        {items.length > 0 ? <CartWidget /> : <></>}
-                    </>
                 </div>
             </div>
         </nav>

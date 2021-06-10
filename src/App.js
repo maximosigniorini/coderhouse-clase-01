@@ -3,7 +3,7 @@ import './App.css';
 import NavBar from './components/NavBar/NavBar'
 import Home from './components/Home/Home'
 import ItemListContainer from './containers/ItemList/ItemListContainer'
-import ItemDetailContainer from './containers/ItemDetailContainer'
+import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer'
 import Cart from './containers/Cart/CartContainer'
 import { CartProvider } from './context/CartContext'
 import Conocenos from './components/Conocenos/Conocenos'
@@ -30,7 +30,7 @@ function App() {
                 <Cart />
             </Route>
             <Route path="/conocenos">
-                <Conocenos titulo={'Pizzeria Signiorini'}/>
+                <Conocenos />
             </Route>
             <Route path="/contacto">
                 <Contacto />

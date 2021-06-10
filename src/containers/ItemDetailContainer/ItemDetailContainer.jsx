@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getFirestore } from "../firebase";
-import ItemDetail from "../components/ItemDetail/ItemDetail";
+import { getFirestore } from "../../firebase";
+import ItemDetail from "../../components/ItemDetail/ItemDetail";
+import NoItems from '../../components/NoItems/NoItems'
 
 export default function ItemDetailContainer(props) {
   const { id } = useParams();
@@ -38,7 +39,7 @@ export default function ItemDetailContainer(props) {
     <>
       {loading ? (
         <div className="fas fa-circle-notch fa-spin flex items-center justify-center text-6xl mt-8"></div>
-      ) : (
+      ) : item.id != undefined ?
         <div className="itemContainer">
           <ItemDetail
             id={id}
@@ -48,7 +49,9 @@ export default function ItemDetailContainer(props) {
             img={item.imgUrl}
           />
         </div>
-      )}
+        :
+        <NoItems />
+        }
     </>
   );
 }

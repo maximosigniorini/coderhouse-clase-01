@@ -1,10 +1,9 @@
 import React from 'react'
 import logo from './../../assets/imgs/logo.png'
 
-export default function Conocenos(props) {
+export default function Conocenos() {
     return (
         <div className='grid place-items-center'>
-            <h1 className='text-6xl mt-16'>{props.titulo}</h1>
             <div className="mt-8 mb-8">
                 <img src={logo} className='w-56' alt='logo-signiorini'></img>
             </div>
