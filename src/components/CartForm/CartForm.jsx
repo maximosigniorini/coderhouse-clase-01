@@ -5,21 +5,31 @@ export default function CartForm() {
 
     const { crearUsuario, finalizarCompra, idCompra } = useContext(CartContext);
     const [finalizar, setFinalizar] = useState(false)
+    const [emailCorrecto, setEmailCorrecto] = useState(false)
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
         let email = e.target.elements.email?.value;
+        let emailCheck = e.target.elements.emailCheck?.value;
         let name = e.target.elements.name?.value;
         let phone = e.target.elements.phone?.value;
 
-        let form = {
-            name: name,
-            phone: phone,
-            email: email
+        if (email === emailCheck) {
+            setEmailCorrecto(true);
+        } else {
+            alert("Los mails no coinciden!")
         }
-        crearUsuario(form);
-        finalizarCompra();
-        setFinalizar(true);
+
+        if (emailCorrecto) {
+            let form = {
+                name: name,
+                phone: phone,
+                email: email
+            }
+            crearUsuario(form);
+            finalizarCompra();
+            setFinalizar(true);
+        }
     }
 
     return (
@@ -57,6 +67,16 @@ export default function CartForm() {
                                     className={`w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4`}
                                     id='email'
                                     placeholder='Tu Email'
+                                />
+                            </div>
+
+                            <div>
+                                <label htmlFor='emailCheck'>Repeti tu Email</label>
+                                <input
+                                    type='email'
+                                    className={`w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4`}
+                                    id='emailCheck'
+                                    placeholder='Repeti tu Email'
                                 />
                             </div>
 
