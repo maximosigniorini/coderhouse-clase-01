@@ -2,12 +2,12 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 
 const app = firebase.initializeApp({
-    apiKey: "AIzaSyC5kD4TaOPrED_zmpnsRaRfV-53dS_INe8",
-    authDomain: "pizzeria-signiorini.firebaseapp.com",
-    projectId: "pizzeria-signiorini",
-    storageBucket: "pizzeria-signiorini.appspot.com",
-    messagingSenderId: "674823143369",
-    appId: "1:674823143369:web:8f6fe8ad487aa786437218"
+    apiKey: process.env.REACT_APP_FIREBASE_API,
+    authDomain: process.env.REACT_APP_FIREBASE_DOMAIN,
+    projectId: process.env.REACT_APP_FIREBASE_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_SENDER,
+    appId: process.env.REACT_APP_FIREBASE_APP
 })
 
 export const getFirebase = () => app;

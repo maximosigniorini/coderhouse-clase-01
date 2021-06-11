@@ -81,8 +81,6 @@ export const CartProvider = ({ children }) => {
       precio: total(),
     };
 
-    console.log('datos: ', compraFinal);
-
     const db = getFirestore();
     const orders = db.collection("orders");
 
